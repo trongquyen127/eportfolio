@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoàng Trọng Quyền | ePortfolio - Cơ Điện Tử LHU</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        techDark: '#0B0F17',
+                        techCard: '#131A26',
+                        techBorder: '#1E293B',
+                        amberAccent: '#F59E0B',
+                        cyanGlow: '#06B6D4',
+                        emeraldGlow: '#10B981',
+                        purpleGlow: '#A855F7'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F17;
+            color: #E2E8F0;
+        }
+        .tech-grid-bg {
+            background-image: radial-gradient(rgba(30, 41, 59, 0.5) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06B6D4;
+        }
+    </style>
+</head>
+<body class="tech-grid-bg text-slate-200 antialiased selection:bg-cyan-500 selection:text-black">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-techDark/85 backdrop-blur-md border-b border-techBorder transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyanGlow to-emeraldGlow flex items-center justify-center font-bold text-slate-950 text-xl shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    Q
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg tracking-wider text-white block leading-none">HT. QUYỀN</span>
+                    <span class="text-[10px] font-mono text-cyanGlow tracking-widest uppercase">MECHATRONICS • LHU</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+                <a href="#about" class="text-slate-300 hover:text-cyanGlow transition-colors">Về Tôi</a>
+                <a href="#certs" class="text-slate-300 hover:text-cyanGlow transition-colors">Chứng Chỉ</a>
+                <a href="#skills" class="text-slate-300 hover:text-cyanGlow transition-colors">Kỹ Năng</a>
+                <a href="#projects" class="text-slate-300 hover:text-cyanGlow transition-colors">Dự Án Mô Hình</a>
+                <a href="#timeline" class="text-slate-300 hover:text-cyanGlow transition-colors">Hành Trình</a>
+                <a href="#contact" class="px-4 py-2 rounded-lg bg-cyanGlow hover:bg-cyan-600 text-slate-950 font-semibold transition-all shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/40">
+                    Liên Hệ
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white p-2 text-2xl focus:outline-none" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-techCard border-b border-techBorder px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block py-2 text-slate-300 hover:text-cyanGlow font-medium">Về Tôi</a>
+            <a href="#certs" class="mobile-link block py-2 text-slate-300 hover:text-cyanGlow font-medium">Chứng Chỉ (B2 / AIM 6.0 / SolidWorks / 5S)</a>
+            <a href="#skills" class="mobile-link block py-2 text-slate-300 hover:text-cyanGlow font-medium">Kỹ Năng Thực Hành</a>
+            <a href="#projects" class="mobile-link block py-2 text-slate-300 hover:text-cyanGlow font-medium">Dự Án Mô Hình</a>
+            <a href="#timeline" class="mobile-link block py-2 text-slate-300 hover:text-cyanGlow font-medium">Hành Trình</a>
+            <a href="#contact" class="mobile-link block py-2.5 px-4 text-center rounded-lg bg-cyanGlow text-slate-950 font-bold">Liên Hệ</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[calc(100vh-80px)] flex items-center justify-center relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
+            <!-- Decorative Glow Backgrounds -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyanGlow/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-emeraldGlow/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-mono text-cyanGlow mb-6 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-emeraldGlow animate-pulse"></span>
+                    Sinh viên ĐH Lạc Hồng (LHU Đồng Nai) • Ngành Cơ Điện Tử
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight mb-4">
+                    HOÀNG TRỌNG QUYỀN
+                </h1>
+
+                <p class="text-xl sm:text-2xl text-cyanGlow font-mono font-medium mb-6 h-8" id="typewriter"></p>
+
+                <p class="max-w-2xl mx-auto text-slate-400 text-base sm:text-lg leading-relaxed mb-8">
+                    Chuyên về Thiết kế Cơ khí 3D SOLIDWORKS, Thi công Mô hình Thang máy Công nghiệp, Lắp ráp Khung xe AGV & Tối ưu Hóa Quy trình Nhà xưởng Chuẩn 3S/5S. Sở hữu Tiếng Anh B2 & Hoàn Thành AIM 6.0.
+                </p>
+
+                <!-- Certification Badges Row in Hero -->
+                <div class="flex flex-wrap justify-center items-center gap-2.5 mb-10">
+                    <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-cyanGlow/40 text-cyanGlow text-xs font-mono flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-language text-cyanGlow"></i> Tiếng Anh B2 (CEFR)
+                    </span>
+                    <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-purpleGlow/40 text-purple-300 text-xs font-mono flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-graduation-cap text-purple-300"></i> Hoàn Thành Khóa AIM 6.0
+                    </span>
+                    <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-amberAccent/40 text-amber-300 text-xs font-mono flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-cube text-amberAccent"></i> SOLIDWORKS Certified
+                    </span>
+                    <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-emeraldGlow/40 text-emerald-300 text-xs font-mono flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-clipboard-check text-emeraldGlow"></i> Chứng Chỉ 3S / 5S
+                    </span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap justify-center items-center gap-4">
+                    <a href="#projects" class="px-6 py-3.5 rounded-xl bg-cyanGlow hover:bg-cyan-600 text-slate-950 font-bold flex items-center gap-2 transition-all shadow-lg shadow-cyan-500/25 hover:scale-105">
+                        <i class="fa-solid fa-cubes"></i> Xem Dự Án Mô Hình
+                    </a>
+                    <a href="#contact" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold border border-slate-700 flex items-center gap-2 transition-all hover:scale-105">
+                        <i class="fa-regular fa-envelope"></i> Liên Hệ Trực Tiếp
+                    </a>
+                    <button onclick="downloadCV()" class="px-6 py-3.5 rounded-xl bg-transparent hover:bg-slate-800/60 text-cyanGlow font-mono text-sm border border-cyanGlow/40 flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-download"></i> Tải Hồ Sơ (PDF)
+                    </button>
+                </div>
+
+                <!-- Fast Specs Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left">
+                    <div class="bg-techCard/80 backdrop-blur border border-techBorder p-4 rounded-xl">
+                        <span class="block text-xl font-bold text-cyanGlow font-mono">ĐH Lạc Hồng</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Cơ Điện Tử - LHU</span>
+                    </div>
+                    <div class="bg-techCard/80 backdrop-blur border border-techBorder p-4 rounded-xl">
+                        <span class="block text-xl font-bold text-purple-300 font-mono">Tiếng Anh B2</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Khóa AIM 6.0 Completed</span>
+                    </div>
+                    <div class="bg-techCard/80 backdrop-blur border border-techBorder p-4 rounded-xl">
+                        <span class="block text-xl font-bold text-amber-400 font-mono">SOLIDWORKS</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Thiết Kế Cơ Khí 3D</span>
+                    </div>
+                    <div class="bg-techCard/80 backdrop-blur border border-techBorder p-4 rounded-xl">
+                        <span class="block text-xl font-bold text-emeraldGlow font-mono">Chuẩn 3S / 5S</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Quản Lý Nhà Xưởng</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-techBorder bg-slate-950/50">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center gap-3 mb-12">
+                    <span class="text-cyanGlow font-mono font-bold text-lg">01.</span>
+                    <h2 class="text-3xl font-extrabold text-white">Giới Thiệu Bản Thân</h2>
+                    <div class="h-[1px] bg-techBorder flex-1 ml-4 hidden sm:block"></div>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-8 items-start">
+                    <div class="md:col-span-7 space-y-6 text-slate-300 leading-relaxed">
+                        <p>
+                            Tôi là sinh viên ngành Cơ điện tử tại <strong class="text-cyanGlow">Trường Đại học Lạc Hồng (LHU - Đồng Nai)</strong>. Tôi định hướng phát triển sự nghiệp chuyên sâu trong lĩnh vực thiết kế cơ khí 3D trên SolidWorks, thi công lắp ráp mô hình kỹ thuật và áp dụng quy chuẩn 3S/5S nâng cao hiệu quả làm việc.
+                        </p>
+                        <p>
+                            Tôi sở hữu năng lực chuyên môn vững vàng được khẳng định qua <strong class="text-amberAccent">Chứng chỉ Quốc tế SOLIDWORKS</strong> cùng chứng nhận thực hành <strong class="text-emeraldGlow">3S / 5S Quản lý Nhà xưởng</strong>. Đặc biệt, tôi chú trọng phát triển năng lực ngôn ngữ toàn diện: tôi đạt trình độ <strong class="text-cyanGlow">Tiếng Anh B2 (CEFR)</strong> và đã <strong class="text-purple-300">hoàn thành xuất sắc khóa học IELTS AIM 6.0</strong>, giúp tôi dễ dàng đọc hiểu tài liệu kỹ thuật quốc tế và giao tiếp công việc hiệu quả.
+                        </p>
+                        <p>
+                            Các lĩnh vực thi công mô hình thế mạnh của tôi bao gồm: <strong class="text-white">Thiết kế & chế tạo khung xe tự hành AGV, thi công mô hình Thang máy công nghiệp đa tầng, bố trí cụm cảm biến RFID/siêu âm và chuẩn hóa xưởng thực hành theo quy chuẩn 5S ISO</strong>.
+                        </p>
+                        <div class="p-4 rounded-xl bg-techCard border-l-4 border-cyanGlow text-slate-300 italic text-sm">
+                            "Tác phong kỹ thuật chuẩn 5S, nền tảng thiết kế 3D SolidWorks cùng ngoại ngữ B2 & AIM 6.0 là nền tảng vững chắc giúp tôi tiếp thu công nghệ tiên tiến và hoàn thành các mô hình kỹ thuật với độ chính xác cao."
+                        </div>
+                    </div>
+
+                    <!-- Academic & Cert Info Card -->
+                    <div class="md:col-span-5 space-y-4">
+                        <div class="bg-techCard border border-techBorder p-6 rounded-2xl relative overflow-hidden group hover:border-cyanGlow/50 transition-all">
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-cyanGlow/5 rounded-bl-full pointer-events-none"></div>
+                            <h3 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-cyanGlow"></i> Đào Tạo & Ngoại Ngữ
+                            </h3>
+                            <ul class="space-y-3 text-xs sm:text-sm">
+                                <li class="border-b border-techBorder/60 pb-2.5">
+                                    <span class="text-cyanGlow font-semibold block">Trường Đại học Lạc Hồng (LHU)</span>
+                                    <span class="text-slate-300">Chuyên ngành: Cơ điện tử (Đồng Nai)</span>
+                                </li>
+                                <li class="border-b border-techBorder/60 pb-2.5">
+                                    <span class="text-purple-300 font-semibold block">Ngoại Ngữ Tiếng Anh</span>
+                                    <span class="text-slate-300">Bằng B2 CEFR & Đã Hoàn Thành Khóa AIM 6.0</span>
+                                </li>
+                                <li>
+                                    <span class="text-slate-200 font-medium block mb-1">Năng Lực Trọng Tâm:</span>
+                                    <div class="flex flex-wrap gap-1.5 mt-1.5">
+                                        <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-slate-300">SolidWorks 3D</span>
+                                        <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-slate-300">Thiết kế AGV</span>
+                                        <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-slate-300">Mô Hình Thang Máy</span>
+                                        <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-slate-300">Quy Chuẩn 3S / 5S</span>
+                                        <span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-slate-300">Bản Vẽ ISO 2D</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certs" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-techBorder">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center gap-3 mb-12">
+                    <span class="text-cyanGlow font-mono font-bold text-lg">02.</span>
+                    <h2 class="text-3xl font-extrabold text-white">Chứng Chỉ & Bằng Cấp Nổi Bật</h2>
+                    <div class="h-[1px] bg-techBorder flex-1 ml-4 hidden sm:block"></div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Cert 1: English B2 -->
+                    <div class="bg-techCard border border-techBorder p-5 rounded-2xl hover:border-cyanGlow/50 transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyanGlow/10 text-cyanGlow flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-language"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-cyanGlow uppercase tracking-widest block mb-1">Ngoại Ngữ Quốc Tế</span>
+                            <h3 class="text-base font-bold text-white mb-2">Chứng Chỉ Tiếng Anh B2</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                Khung tham chiếu CEFR B2. Đọc hiểu tài liệu kỹ thuật, Datasheet chi tiết thiết bị cơ khí và trao đổi công việc tự tin.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-techBorder/60 flex justify-between items-center text-[11px] font-mono">
+                            <span class="text-slate-400">Khung CEFR B2</span>
+                            <span class="text-cyanGlow font-bold"><i class="fa-solid fa-check-circle"></i> Certified</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2: AIM 6.0 Course -->
+                    <div class="bg-techCard border border-techBorder p-5 rounded-2xl hover:border-purpleGlow/50 transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-purpleGlow/10 text-purple-300 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-purple-300 uppercase tracking-widest block mb-1">Khóa Học Chuyên Sâu</span>
+                            <h3 class="text-base font-bold text-white mb-2">Đã Hoàn Thành Khóa AIM 6.0</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                Tốt nghiệp khóa học IELTS AIM 6.0. Củng cố phản xạ ngôn ngữ, tư duy logic trình bày báo cáo kỹ thuật và viết email chuyên nghiệp.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-techBorder/60 flex justify-between items-center text-[11px] font-mono">
+                            <span class="text-slate-400">IELTS Level</span>
+                            <span class="text-purple-300 font-bold"><i class="fa-solid fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3: SolidWorks -->
+                    <div class="bg-techCard border border-techBorder p-5 rounded-2xl hover:border-amberAccent/50 transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-amberAccent/10 text-amberAccent flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-cube"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-amberAccent uppercase tracking-widest block mb-1">Thiết Kế Cơ Khí</span>
+                            <h3 class="text-base font-bold text-white mb-2">Chứng Chỉ SOLIDWORKS 3D</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                Dựng mô hình Part 3D, Assembly cụm lắp ghép chi tiết máy, xuất bản vẽ kỹ thuật 2D tiêu chuẩn phục vụ chế tạo gia công.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-techBorder/60 flex justify-between items-center text-[11px] font-mono">
+                            <span class="text-slate-400">SOLIDWORKS CAD</span>
+                            <span class="text-amberAccent font-bold"><i class="fa-solid fa-check-circle"></i> Certified</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 4: 3S / 5S -->
+                    <div class="bg-techCard border border-techBorder p-5 rounded-2xl hover:border-emeraldGlow/50 transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-emeraldGlow/10 text-emeraldGlow flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-emeraldGlow uppercase tracking-widest block mb-1">Quản Lý Sản Xuất</span>
+                            <h3 class="text-base font-bold text-white mb-2">Chứng Chỉ Thực Hành 3S / 5S</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                Áp dụng Sàng lọc - Sắp xếp - Sạch sẽ trong khu vực làm việc. Bảo đảm an toàn lao động và ngăn nắp dụng cụ thiết bị.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-techBorder/60 flex justify-between items-center text-[11px] font-mono">
+                            <span class="text-slate-400">Quản Lý Nhà Xưởng</span>
+                            <span class="text-emeraldGlow font-bold"><i class="fa-solid fa-check-circle"></i> Certified</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-techBorder bg-slate-950/50">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-12">
+                    <div class="flex items-center gap-3">
+                        <span class="text-cyanGlow font-mono font-bold text-lg">03.</span>
+                        <h2 class="text-3xl font-extrabold text-white">Kỹ Năng & Năng Lực Bổ Trợ</h2>
+                    </div>
+
+                    <!-- Search / Filter Skill Buttons -->
+                    <div class="flex flex-wrap gap-2" id="skill-filters">
+                        <button class="skill-filter-btn active px-3 py-1.5 rounded-lg text-xs font-mono bg-cyanGlow text-slate-950 font-bold transition-all" data-category="all">Tất cả</button>
+                        <button class="skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 hover:text-white transition-all" data-category="cad">SolidWorks & Bản Vẽ</button>
+                        <button class="skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 hover:text-white transition-all" data-category="model">Lắp Ráp Mô Hình & Cảm Biến</button>
+                        <button class="skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 hover:text-white transition-all" data-category="lang">Tiếng Anh & Quy Chuẩn 5S</button>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6" id="skills-container">
+                    
+                    <!-- CAD & Mechanical -->
+                    <div class="skill-card bg-techCard border border-techBorder p-6 rounded-2xl" data-category="cad">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 rounded-xl bg-amberAccent/10 text-amberAccent text-xl">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-white">Thiết Kế 3D SOLIDWORKS</h3>
+                                <p class="text-xs text-slate-400 font-mono">Dựng Part, Assembly khung xe AGV, Thang máy, Xuất bản vẽ 2D</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-slate-300">Dựng Chi Tiết Part & Cụm Lắp Ghép Assembly</span>
+                                    <span class="text-amberAccent">92%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-amberAccent to-amber-400 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-slate-300">Xuất Bản Vẽ Kỹ Thuật 2D Kích Thước Tiêu Chuẩn ISO</span>
+                                    <span class="text-amberAccent">90%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-amberAccent to-amber-400 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Model Fitting & Sensors -->
+                    <div class="skill-card bg-techCard border border-techBorder p-6 rounded-2xl" data-category="model">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 rounded-xl bg-cyanGlow/10 text-cyanGlow text-xl">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-white">Lắp Ráp Mô Hình & Cảm Biến</h3>
+                                <p class="text-xs text-slate-400 font-mono">Căn chỉnh khớp nối cơ khí, gá cảm biến RFID & Siêu âm</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-slate-300">Thi Công Khung Xe AGV & Cơ Cấu Puly Kéo Thang Máy</span>
+                                    <span class="text-cyanGlow">90%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-cyanGlow to-teal-400 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-slate-300">Gá Đặt Cảm Biến RFID, Siêu Âm & Công Tắc Hành Trình</span>
+                                    <span class="text-cyanGlow">92%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-cyanGlow to-teal-400 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="skill-card bg-techCard border border-techBorder p-6 rounded-2xl" data-category="lang">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 rounded-xl bg-purpleGlow/10 text-purple-300 text-xl">
+                                <i class="fa-solid fa-language"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-white">Ngoại Ngữ Tiếng Anh</h3>
+                                <p class="text-xs text-slate-400 font-mono">CEFR B2, Khóa AIM 6.0 Completed, Đọc Datasheet</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-slate-300">Đọc Hiểu Tài Liệu Kỹ Thuật & Datasheet Thiết Bị</span>
+                                    <span class="text-purple-300">92%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-purpleGlow to-indigo-400 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-slate-300">Giao Tiếp Tiếng Anh Công Việc (B2 / AIM 6.0)</span>
+                                    <span class="text-purple-300">88%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-purpleGlow to-indigo-400 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3S / 5S Workplace Standard -->
+                    <div class="skill-card bg-techCard border border-techBorder p-6 rounded-2xl" data-category="lang">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 rounded-xl bg-emeraldGlow/10 text-emeraldGlow text-xl">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-white">Chuẩn Hóa Xưởng 3S / 5S</h3>
+                                <p class="text-xs text-slate-400 font-mono">Quản lý không gian làm việc, An toàn lao động & Sắp xếp dụng cụ</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-slate-300">Sàng Lọc, Sắp Xếp Dụng Cụ Thực Hành Ngăn Nắp</span>
+                                    <span class="text-emeraldGlow">95%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-emeraldGlow to-green-400 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-slate-300">Duy Trì Quy Trình Vệ Sinh & An Toàn Lao Động Xưởng</span>
+                                    <span class="text-emeraldGlow">94%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-emeraldGlow to-green-400 rounded-full" style="width: 94%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-techBorder">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-cyanGlow font-mono font-bold text-lg">04.</span>
+                            <h2 class="text-3xl font-extrabold text-white">Dự Án & Mô Hình Thực Hành</h2>
+                        </div>
+                        <p class="text-slate-400 text-sm mt-1">Các dự án thiết kế cơ khí 3D, thi công mô hình và chuẩn hóa quy trình xưởng</p>
+                    </div>
+
+                    <!-- Project Tabs Filter -->
+                    <div class="flex flex-wrap gap-2" id="project-filters">
+                        <button class="project-tab active px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyanGlow text-slate-950 transition-all" data-filter="all">Tất cả</button>
+                        <button class="project-tab px-4 py-2 rounded-xl text-xs font-mono bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="agv">Xe Tự Hành AGV</button>
+                        <button class="project-tab px-4 py-2 rounded-xl text-xs font-mono bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="elevator">Mô Hình Thang Máy</button>
+                        <button class="project-tab px-4 py-2 rounded-xl text-xs font-mono bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="standard">Chuẩn Hóa 5S & CAD</button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    
+                    <!-- Project 1: AGV -->
+                    <div class="project-card bg-techCard border border-techBorder rounded-2xl overflow-hidden hover:border-cyanGlow/50 transition-all flex flex-col group" data-category="agv">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-t from-techCard to-transparent z-10"></div>
+                            <i class="fa-solid fa-truck-ramp-box text-6xl text-cyanGlow/30 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur border border-cyanGlow/30 text-cyanGlow font-mono text-[10px] px-2.5 py-1 rounded-full z-20">
+                                Xe Tự Hành AGV
+                            </span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyanGlow transition-colors mb-2">
+                                    Mô Hình Xe Tự Hành AGV
+                                </h3>
+                                <p class="text-xs text-slate-400 line-clamp-3 mb-4 leading-relaxed">
+                                    Thiết kế mô hình khung xe 3D trên SolidWorks, lắp ráp cơ cấu cơ khí 2 bánh chủ động, bố trí cụm cảm biến vị trí RFID & cảm biến siêu âm tránh vật cản, tính toán cân bằng phân bổ trọng tải.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-mono text-slate-300">Khung SolidWorks 3D</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-mono text-slate-300">Cảm Biến RFID & Siêu Âm</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-mono text-slate-300">Cân Bằng Trọng Tải</span>
+                                </div>
+                                <button onclick="openModal('agv-modal')" class="w-full py-2 rounded-xl bg-slate-800 hover:bg-cyanGlow hover:text-slate-950 font-mono text-xs font-semibold text-slate-300 transition-all border border-slate-700 hover:border-cyanGlow">
+                                    Chi tiết thi công <i class="fa-solid fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Elevator Model -->
+                    <div class="project-card bg-techCard border border-techBorder rounded-2xl overflow-hidden hover:border-amberAccent/50 transition-all flex flex-col group" data-category="elevator">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-t from-techCard to-transparent z-10"></div>
+                            <i class="fa-solid fa-building text-6xl text-amberAccent/30 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur border border-amberAccent/30 text-amber-400 font-mono text-[10px] px-2.5 py-1 rounded-full z-20">
+                                Mô Hình Thang Máy
+                            </span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mb-2">
+                                    Mô Hình Thang Máy Công Nghiệp
+                                </h3>
+                                <p class="text-xs text-slate-400 line-clamp-3 mb-4 leading-relaxed">
+                                    Dựng mô hình khung ray cabin thang máy, lắp ráp hệ thống puly cáp kéo, căn chỉnh vị trí công tắc hành trình (limit switch), đảm bảo độ chính xác cơ khí và chuyển động êm ái.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-mono text-slate-300">Hệ Puly Kép Cáp</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-mono text-slate-300">Công Tắc Hành Trình</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-mono text-slate-300">Khung Ray Dẫn Huống</span>
+                                </div>
+                                <button onclick="openModal('elevator-modal')" class="w-full py-2 rounded-xl bg-slate-800 hover:bg-amberAccent hover:text-slate-950 font-mono text-xs font-semibold text-slate-300 transition-all border border-slate-700 hover:border-amberAccent">
+                                    Chi tiết thi công <i class="fa-solid fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: 5S & Engineering Drawings -->
+                    <div class="project-card bg-techCard border border-techBorder rounded-2xl overflow-hidden hover:border-emeraldGlow/50 transition-all flex flex-col group" data-category="standard">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-t from-techCard to-transparent z-10"></div>
+                            <i class="fa-solid fa-compass-drafting text-6xl text-emeraldGlow/30 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur border border-emeraldGlow/30 text-emeraldGlow font-mono text-[10px] px-2.5 py-1 rounded-full z-20">
+                                5S & Bản Vẽ Kỹ Thuật
+                            </span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-emeraldGlow transition-colors mb-2">
+                                    Chuẩn Hóa 3S/5S & Bản Vẽ ISO
+                                </h3>
+                                <p class="text-xs text-slate-400 line-clamp-3 mb-4 leading-relaxed">
+                                    Ứng dụng nguyên tắc 5S vào xưởng thực hành, phân loại và sắp xếp ngăn nắp thiết bị dụng cụ. Lập bản vẽ 2D/3D chi tiết máy chuẩn kích thước kỹ thuật ISO.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-mono text-slate-300">Chuẩn 5S Nhà Xưởng</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-mono text-slate-300">Bản Vẽ 2D ISO</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-mono text-slate-300">Quản Lý Ngăn Nắp</span>
+                                </div>
+                                <button onclick="openModal('standard-modal')" class="w-full py-2 rounded-xl bg-slate-800 hover:bg-emeraldGlow hover:text-slate-950 font-mono text-xs font-semibold text-slate-300 transition-all border border-slate-700 hover:border-emeraldGlow">
+                                    Chi tiết thực hiện <i class="fa-solid fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Modals -->
+        <div id="agv-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center z-50 p-4">
+            <div class="bg-techCard border border-techBorder max-w-2xl w-full rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+                <button onclick="closeModal('agv-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <span class="text-xs font-mono text-cyanGlow uppercase tracking-widest block mb-1">Mô Hình Xe Tự Hành</span>
+                <h3 class="text-2xl font-bold text-white mb-4">Xe Tự Hành AGV Chở Hàng</h3>
+                <div class="space-y-4 text-slate-300 text-sm leading-relaxed">
+                    <p>
+                        Dự án thiết kế và lắp ráp mô hình xe AGV phục vụ vận chuyển hàng hóa tự động trong nhà xưởng.
+                    </p>
+                    <h4 class="font-bold text-cyanGlow font-mono text-xs uppercase tracking-wider">Chi Tiết Kỹ Thuật Thực Hiện:</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+                        <li><strong>Thiết kế 3D SOLIDWORKS:</strong> Dựng mô hình khung xe 2 tầng bằng nhôm định hình, tính toán khoảng sáng gầm xe và điểm gá đặt bánh xe xoay tự do.</li>
+                        <li><strong>Lắp ráp cơ khí:</strong> Định vị chính xác bánh xe chủ động, gá động cơ và đĩa truyền động đồng bộ.</li>
+                        <li><strong>Bố trí cụm cảm biến:</strong> Thiết kế giá đỡ gá lắp cụm cảm biến RFID bên gầm xe để đọc mốc dừng đỗ và cảm biến siêu âm phía trước để phát hiện vật cản.</li>
+                        <li><strong>Phân bổ trọng tải:</strong> Tính toán vị trí đặt khối nguồn pin ở trọng tâm xe nhằm bảo đảm độ cân bằng tối đa khi di chuyển mang tải.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="elevator-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center z-50 p-4">
+            <div class="bg-techCard border border-techBorder max-w-2xl w-full rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+                <button onclick="closeModal('elevator-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <span class="text-xs font-mono text-amber-400 uppercase tracking-widest block mb-1">Mô Hình Nâng Hạ Đa Tầng</span>
+                <h3 class="text-2xl font-bold text-white mb-4">Mô Hình Thang Máy Công Nghiệp</h3>
+                <div class="space-y-4 text-slate-300 text-sm leading-relaxed">
+                    <p>
+                        Chế tạo mô hình thang máy công nghiệp mô phỏng chính xác cơ cấu vận hành cabin kéo cáp đa tầng.
+                    </p>
+                    <h4 class="font-bold text-amber-400 font-mono text-xs uppercase tracking-wider">Chi Tiết Kỹ Thuật Thực Hiện:</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+                        <li><strong>Khung ray dẫn hướng:</strong> Dựng khung hố thang máy chắc chắn trên SolidWorks, bố trí thanh ray trượt căn chỉnh độ thẳng hàng cho buồng cabin.</li>
+                        <li><strong>Bộ truyền puly kéo cáp:</strong> Lắp ráp puly kéo cáp cơ khí, điều chỉnh độ căng dây cáp để nâng hạ mượt mà, hạn chế tối đa độ rung lắc.</li>
+                        <li><strong>Gá lắp công tắc hành trình:</strong> Cố định chính xác vị trí công tắc tiệm cận/hành trình tại từng sàn tầng để nhận diện điểm dừng chuẩn xác.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="standard-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center z-50 p-4">
+            <div class="bg-techCard border border-techBorder max-w-2xl w-full rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+                <button onclick="closeModal('standard-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <span class="text-xs font-mono text-emeraldGlow uppercase tracking-widest block mb-1">Chuẩn Hóa Xưởng & ISO CAD</span>
+                <h3 class="text-2xl font-bold text-white mb-4">Chuẩn Hóa 3S/5S & Bản Vẽ Kỹ Thuật</h3>
+                <div class="space-y-4 text-slate-300 text-sm leading-relaxed">
+                    <p>
+                        Áp dụng kiến thức quản lý 3S/5S nhà xưởng thực tế kết hợp kỹ năng lập bản vẽ cơ khí 2D/3D chuyên nghiệp.
+                    </p>
+                    <h4 class="font-bold text-emeraldGlow font-mono text-xs uppercase tracking-wider">Chi Tiết Thực Hiện:</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-slate-400">
+                        <li><strong>Quy chuẩn 3S/5S:</strong> Tiến hành Sàng lọc thiết bị hỏng, Sắp xếp lại bảng treo dụng cụ cơ khí rõ ràng, Sạch sẽ vệ sinh khu vực thi công.</li>
+                        <li><strong>An toàn lao động:</strong> Sắp xếp khu vực vật tư gọn gàng, giảm thiểu nguy cơ va đập và bảo đảm môi trường làm việc an toàn.</li>
+                        <li><strong>Bản vẽ ISO 2D:</strong> Xuất bản vẽ kỹ thuật 2D trên SolidWorks với đầy đủ dung sai, độ nhám bề mặt và khung tên theo tiêu chuẩn kỹ thuật ISO.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-techBorder bg-slate-950/50">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center gap-3 mb-12">
+                    <span class="text-cyanGlow font-mono font-bold text-lg">05.</span>
+                    <h2 class="text-3xl font-extrabold text-white">Lộ Trình Học Tập & Bằng Cấp</h2>
+                </div>
+
+                <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
+                    <!-- Step 1 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-cyanGlow group-hover:bg-cyanGlow transition-colors"></div>
+                        <span class="md:absolute md:-left-36 md:top-1 font-mono text-xs text-cyanGlow font-semibold uppercase block mb-1">Nền Tảng LHU</span>
+                        <div class="bg-techCard border border-techBorder p-5 rounded-2xl hover:border-slate-700 transition-all">
+                            <h3 class="text-base font-bold text-white">Nền Tảng Cơ Điện Tử ĐH Lạc Hồng</h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Nhập học chuyên ngành Cơ Điện Tử tại ĐH Lạc Hồng (LHU - Đồng Nai). Tích lũy kiến thức nguyên lý máy, vật liệu cơ khí và bản vẽ kỹ thuật.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-purpleGlow group-hover:bg-purpleGlow transition-colors"></div>
+                        <span class="md:absolute md:-left-36 md:top-1 font-mono text-xs text-purple-300 font-semibold uppercase block mb-1">Ngoại Ngữ & CAD</span>
+                        <div class="bg-techCard border border-techBorder p-5 rounded-2xl hover:border-slate-700 transition-all">
+                            <h3 class="text-base font-bold text-white">Bằng B2 Tiếng Anh & Chứng Chỉ SOLIDWORKS</h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Đạt Chứng chỉ Tiếng Anh B2 (CEFR), hoàn thành xuất sắc khóa học IELTS AIM 6.0 và thi đạt Chứng chỉ SOLIDWORKS 3D CAD.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-amberAccent group-hover:bg-amberAccent transition-colors"></div>
+                        <span class="md:absolute md:-left-36 md:top-1 font-mono text-xs text-amber-400 font-semibold uppercase block mb-1">Thi Công Mô Hình</span>
+                        <div class="bg-techCard border border-techBorder p-5 rounded-2xl hover:border-slate-700 transition-all">
+                            <h3 class="text-base font-bold text-white">Thi Công AGV, Thang Máy & Chuẩn Hóa 3S/5S</h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Trực tiếp thi công mô hình thang máy công nghiệp, thiết kế gầm xe AGV gắn cảm biến RFID/Siêu âm và đạt Chứng chỉ Quản lý Nhà xưởng 3S/5S.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-emeraldGlow group-hover:bg-emeraldGlow transition-colors"></div>
+                        <span class="md:absolute md:-left-36 md:top-1 font-mono text-xs text-emeraldGlow font-semibold uppercase block mb-1">Mục Tiêu</span>
+                        <div class="bg-techCard border border-emeraldGlow/30 p-5 rounded-2xl">
+                            <h3 class="text-base font-bold text-white flex items-center gap-2">
+                                Kỹ Thuật Viên Thiết Kế 3D CAD & Cơ Khí <i class="fa-solid fa-graduation-cap text-emeraldGlow"></i>
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Sẵn sàng đóng góp năng lực tại các doanh nghiệp chế tạo cơ khí, thiết kế bản vẽ SolidWorks và hỗ trợ sản xuất tại Đồng Nai & khu vực lân cận.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-techBorder">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center gap-3 mb-12">
+                    <span class="text-cyanGlow font-mono font-bold text-lg">06.</span>
+                    <h2 class="text-3xl font-extrabold text-white">Liên Hệ & Kết Nối</h2>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-8">
+                    <!-- Left info -->
+                    <div class="md:col-span-5 space-y-6">
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Rất mong nhận được sự quan tâm của quý doanh nghiệp đối với vị trí Kỹ thuật viên Thiết kế 3D SolidWorks, Lắp ráp Mô hình Kỹ thuật tại Đồng Nai và các tỉnh thành lân cận.
+                        </p>
+
+                        <div class="space-y-4 font-mono text-sm">
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-techCard border border-techBorder">
+                                <div class="w-10 h-10 rounded-lg bg-cyanGlow/10 text-cyanGlow flex items-center justify-center text-lg">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-slate-500 uppercase block">Email Trực Tiếp</span>
+                                    <a href="mailto:hoangtrongquyen.lhu@gmail.com" class="text-slate-200 hover:text-cyanGlow transition-colors">hoangtrongquyen.lhu@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-techCard border border-techBorder">
+                                <div class="w-10 h-10 rounded-lg bg-amberAccent/10 text-amberAccent flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-slate-500 uppercase block">Trường & Địa Điểm</span>
+                                    <span class="text-slate-200">Đại học Lạc Hồng, Thành phố Đồng Nai</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-techCard border border-techBorder">
+                                <div class="w-10 h-10 rounded-lg bg-purpleGlow/10 text-purple-300 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-slate-500 uppercase block">Bằng Cấp Trọng Tâm</span>
+                                    <span class="text-slate-200">B2 English • AIM 6.0 • SolidWorks 3D • 3S/5S</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Form -->
+                    <div class="md:col-span-7 bg-techCard border border-techBorder p-6 sm:p-8 rounded-2xl">
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-mono text-slate-400 mb-1.5">Họ & Tên *</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-techBorder text-white text-sm focus:outline-none focus:border-cyanGlow transition-colors" placeholder="Nguyễn Văn A">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-mono text-slate-400 mb-1.5">Email *</label>
+                                    <input type="email" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-techBorder text-white text-sm focus:outline-none focus:border-cyanGlow transition-colors" placeholder="company@gmail.com">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 mb-1.5">Tiêu đề</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-techBorder text-white text-sm focus:outline-none focus:border-cyanGlow transition-colors" placeholder="Trao đổi cơ hội tuyển dụng / Dự án">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 mb-1.5">Nội dung lời nhắn *</label>
+                                <textarea required rows="4" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-techBorder text-white text-sm focus:outline-none focus:border-cyanGlow transition-colors resize-none" placeholder="Để lại lời nhắn của bạn..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-cyanGlow hover:bg-cyan-600 text-slate-950 font-bold transition-all shadow-lg shadow-cyan-500/20">
+                                Gửi Lời Nhắn <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-techBorder py-8 bg-slate-950 text-center text-xs text-slate-500 font-mono">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                © 2026 Hoàng Trọng Quyền • Đại học Lạc Hồng (LHU Đồng Nai).
+            </div>
+            <div class="flex gap-4">
+                <a href="#hero" class="hover:text-cyanGlow transition-colors">Về đầu trang <i class="fa-solid fa-arrow-up ml-1"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-cyanGlow text-slate-950 px-5 py-3 rounded-xl font-medium shadow-2xl transition-all transform translate-y-20 opacity-0 z-50 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span id="toast-message">Thông tin đã được gửi thành công!</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Typewriter Effect
+        const phrases = [
+            "Bằng B2 Tiếng Anh & Khóa AIM 6.0 Completed",
+            "Chứng Chỉ SOLIDWORKS 3D CAD Quốc Tế",
+            "Trường Đại Học Lạc Hồng (LHU Đồng Nai)",
+            "Chứng Chỉ 3S / 5S Chuẩn Quản Lý Xưởng",
+            "Thi Công Mô Hình Thang Máy & Xe AGV"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterEl = document.getElementById('typewriter');
+
+        function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typewriterEl.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterEl.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 70;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 400;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        window.onload = function() {
+            typeEffect();
+        };
+
+        // Skill Filters Logic
+        const skillBtns = document.querySelectorAll('.skill-filter-btn');
+        const skillCards = document.querySelectorAll('.skill-card');
+
+        skillBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                skillBtns.forEach(b => {
+                    b.classList.remove('bg-cyanGlow', 'text-slate-950', 'font-bold', 'active');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+                btn.classList.add('bg-cyanGlow', 'text-slate-950', 'font-bold', 'active');
+                btn.classList.remove('bg-slate-800', 'text-slate-300');
+
+                const cat = btn.getAttribute('data-category');
+                skillCards.forEach(card => {
+                    if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Project Filters Logic
+        const projectTabs = document.querySelectorAll('.project-tab');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        projectTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                projectTabs.forEach(t => {
+                    t.classList.remove('bg-cyanGlow', 'text-slate-950', 'font-bold', 'active');
+                    t.classList.add('bg-slate-800', 'text-slate-300');
+                });
+                tab.classList.add('bg-cyanGlow', 'text-slate-950', 'font-bold', 'active');
+                tab.classList.remove('bg-slate-800', 'text-slate-300');
+
+                const filter = tab.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Controls
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if(modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if(modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // Contact Form Handling
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("Cảm ơn bạn! Lời nhắn đã được gửi tới Hoàng Trọng Quyền (LHU).");
+            document.getElementById('contact-form').reset();
+        }
+
+        // Download CV Simulation
+        function downloadCV() {
+            showToast("Đang tải xuống hồ sơ SOLIDWORKS 3D & Tiếng Anh B2/AIM 6.0...");
+        }
+
+        // Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = msg;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
